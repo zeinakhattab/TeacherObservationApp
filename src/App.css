@@ -1,0 +1,170 @@
+.App {
+  text-align: center;
+  margin: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(180deg, #4CAF50 0%, #2E7D32 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(180deg, #388E3C 0%, #1B5E20 100%);
+}
+
+textarea {
+  width: 80%;
+  height: 300px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.logo-container {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 47px;
+  height: 59px;
+}
+
+.title {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.top-right-container {
+  width: 122px;
+  height: 60px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.rounded-rect {
+  width: calc(100% - 0px); /* Adjust for padding */
+  height: 738px;
+  position: absolute;
+  top: 80px; /* Adjust this value based on the height of the logo and top-right div */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #E8F5FC; /* Baby blue color */
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 82px; /* Space at the top */
+  padding-bottom: 280px; /* Space at the bottom */
+}
+
+.submit-container {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.textarea {
+  width: calc(100% - 40px); /* Adjust for padding */
+  height: calc(100% - 10px); /* Adjust for top and bottom padding */
+  border: none;
+  outline: none;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.record-button-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#recordButton {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  background: linear-gradient(180deg, #DF4F4F 0%, #792B2B 100%);
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#recordButton:hover {
+  background: linear-gradient(180deg, #C43A3A 0%, #5A1F1F 100%);
+}
+
+.record-button-icon {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 9999px;
+}
+
+.recording {
+  background: linear-gradient(180deg, #DF4F4F 0%, #792B2B 100%)!important;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recording .record-button-icon {
+  width: 30px; /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */
+  background: white;
+  border-radius: 5px; /* Make it a rectangle */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: #3EA8CF;
+}
+
+.timer {
+  font-size: 68px; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0f5378;
+  font-family: serif;
+}
