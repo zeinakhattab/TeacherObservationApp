@@ -122,7 +122,7 @@ function App() {
         messages: [
           {
             role: "system",
-            content: "Extract the key points from the following transcription."
+            content: "Extract the key points from the following transcriptions made by the teachers. The transcriptions are observations made by teachers of the students performances in an assessment."
           },
           {
             role: "user",
