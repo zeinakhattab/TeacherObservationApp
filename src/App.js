@@ -5,6 +5,8 @@ import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 import './App.css';
 import { v4 as uuidv4 } from 'uuid';
 import { formatISO } from 'date-fns';
+import { OpenAI } from 'openai'; 
+
 
 function App() {
   const [transcript, setTranscript] = useState('');
@@ -27,6 +29,12 @@ function App() {
       secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
     },
   });
+
+  const openai = new OpenAI({
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true
+  });
+
 
   const startTranscription = async () => {
     try {
@@ -107,12 +115,36 @@ function App() {
     return Buffer.from(buffer);
   };
 
+  const extractKeyPoints = async (text) => {
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "system",
+            content: "Extract the key points from the following transcription."
+          },
+          {
+            role: "user",
+            content: text
+          }
+        ],
+      });
+      return response.choices[0].message.content.trim();
+    } catch (error) {
+      console.error('Error extracting key points:', error);
+      return text;
+    }
+  };
+
   const handleSubmit = async () => {
+    const keyPoints = await extractKeyPoints(transcript);
     const params = {
       TableName: 'Transcriptions',
       Item: {
         'TranscriptionId': { S: uuidv4() },
         'Transcription': { S: transcript },
+        'KeyPhrases': { S: keyPoints },
         'created_date': { S: formatISO(new Date()) }
       }
     };
