@@ -71,6 +71,23 @@ textarea {
   padding-bottom: 280px; /* Space at the bottom */
 }
 
+.instruction-text {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 190px;
+  padding-bottom: 50px;
+  color: #0d4d6bff;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid #0d4d6bff;
+ 
+}
 .submit-container {
   position: absolute;
   top: 25px;
@@ -167,4 +184,37 @@ body {
   margin-bottom: 20px;
   color: #0f5378;
   font-family: serif;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px; /* Adjust as needed */
+}
+
+.checkmark-container {
+  margin-top: 20px;
+}
+
+
+.checkmark {
+  width: 230px;
+  height: 180px;
+}
+
+.prompt-container {
+  text-align: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.prompt-container p {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0d4d6bff;
+  padding-left: 50px;
+  padding-right: 50px;
 }
